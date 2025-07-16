@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>도착 정보</title>
+</head>
+<body>
+  <h1>정류장 ID: {{ stop_id }}</h1>
+  <ul>
+    {% for a in arrivals %}
+      <li>
+        {{ a.route_name }}번 버스: 
+        {{ a.arrival_time }} 후 도착
+        (현재 위치: {{ a.present_stop_name }}, 남은 정류장 {{ a.remain_stops }}개)
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

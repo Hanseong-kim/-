@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>정류장 검색 결과</title></head>
+<body>
+  <h2>정류장 이름에 "{{ name }}"이(가) 포함된 정류장 목록</h2>
+  <ul>
+    {% for stop in results %}
+      <li>
+        {{ stop.STOPNAME }} (ID: {{ stop.STOPID }}) → 
+        <a href="/ulsan/arrival/view?stopid={{ stop.STOPID }}">도착정보 보기</a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
